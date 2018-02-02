@@ -16,7 +16,8 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.new(
         title:params[:title],
-        chef:params[:chef],
+        #knock gives the current_user variable
+        user_id: current_user.id,
         ingredients:params[:ingredients],
         directions:params[:directions]
       )
